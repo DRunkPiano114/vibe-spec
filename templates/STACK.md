@@ -20,6 +20,12 @@
 
 <!-- e.g. pnpm, uv, cargo -->
 
+## Deployment & Infrastructure
+
+<!-- Hosting, CI/CD pipeline, environment management.
+e.g. Vercel (prod), GitHub Actions (CI), .env.local for secrets -->
+
 ## Conventions
 
-<!-- Formatting, linting, naming, file structure conventions -->
+<!-- Formatting, linting, naming, file structure conventions.
+e.g. ESLint + Prettier, kebab-case filenames, barrel exports forbidden -->

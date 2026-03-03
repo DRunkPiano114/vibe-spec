@@ -32,6 +32,7 @@ export async function init(options: { force?: boolean }) {
     { path: join(vibeDir, "SPEC.md"), template: "SPEC.md" },
     { path: join(vibeDir, "STACK.md"), template: "STACK.md" },
     { path: join(vibeDir, "DESIGN.md"), template: "DESIGN.md" },
+    { path: join(modulesDir, "example.md"), template: "module.md" },
   ];
 
   for (const { path, template } of files) {
@@ -45,7 +46,6 @@ export async function init(options: { force?: boolean }) {
     }
   }
 
-  console.log(`  Created .vibe/modules/`);
 
   const agentsSection = readTemplate("agents-section.md");
 

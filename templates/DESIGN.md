@@ -2,31 +2,43 @@
 
 ## Architecture Overview
 
-<!-- High-level architecture: monolith, microservices, serverless, etc. Include a diagram if helpful. -->
+<!-- High-level architecture: monolith, microservices, serverless, etc.
+Describe the major layers and how they relate. Include a diagram if helpful. -->
 
 ## Data Model
 
-<!-- Core entities and their relationships. -->
+<!-- Core entities and their relationships.
 
-<!--
-| Entity | Key Fields | Relationships |
-|--------|-----------|---------------|
-| User   | id, email | has many Orders |
+- **User** (fields: id, email, created_at · relations: has many Orders)
+- **Order** (fields: id, user_id, total · relations: belongs to User, has many Items)
+-->
+
+## Module Boundaries
+
+<!-- The major modules and their single responsibility.
+Each module listed here must have a corresponding .vibe/modules/<name>.md file.
+
+- **auth**: authentication and session management
+- **billing**: payment processing and subscriptions
 -->
 
 ## API Design
 
-<!-- REST endpoints, GraphQL schema, RPC methods — whatever applies. -->
+<!-- The interfaces between modules and with external clients — REST endpoints, GraphQL schema, RPC methods, events.
+Define these after module boundaries, since APIs are the product of boundary decisions.
 
-## Module Boundaries
-
-<!-- List the major modules and their responsibilities. Each module listed here should have a corresponding .vibe/modules/<name>.md file. -->
-
-<!--
-- **auth**: authentication and authorization
-- **billing**: payment processing and subscriptions
+### `POST /api/resource`
+Request: `{ field: type }`
+Response: `{ field: type }`
 -->
 
 ## Key Flows
 
-<!-- Describe 2-3 critical user flows through the system. -->
+<!-- Walk through 2-3 critical paths through the system as numbered steps.
+
+### Flow: [name]
+1. User does X
+2. System does Y
+3. Module A calls Module B with Z
+4. Response returned
+-->

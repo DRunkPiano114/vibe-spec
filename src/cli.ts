@@ -4,7 +4,7 @@ import { init } from "./commands/init.js";
 const program = new Command();
 
 program
-  .name("vibe-spec")
+  .name("vibespec")
   .description("Spec-first development protocol for AI coding agents")
   .version("0.1.0");
 

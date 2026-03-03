@@ -31,23 +31,24 @@ All `.vibe/` files represent team decisions. They are not suggestions — they a
 
 ### Testing Discipline
 
-Two categories of tests, fundamentally different:
+Tests are not optional. They are the only reliable enforcement mechanism for everything defined in `.vibe/`. Specs tell you what to build. Tests prove it was built correctly.
 
-- **Contract tests** (iron law): verify that the module's public interface behaves as specified in `modules/*.md`. These tests survive code rewrites — they test WHAT, not HOW. They are never deleted unless the contract changes.
-- **Unit tests** (disposable): verify internal implementation logic. These follow the code — when code is rewritten, these can be rewritten too.
+Two categories of tests, with fundamentally different rules:
+
+- **Contract tests** (iron law): verify that a module's public interface behaves exactly as specified in `modules/*.md`. They test WHAT, not HOW — so they survive complete implementation rewrites. They are never deleted unless the contract itself changes and is approved.
+- **Unit tests** (disposable): verify internal implementation logic. They follow the code — when the implementation is rewritten, these can be rewritten too.
 
 Rules:
-- Every contract test scenario listed in `modules/*.md` MUST have a corresponding test.
+- Every scenario listed in `modules/*.md` MUST have a corresponding contract test.
 - Tests must pass before any commit.
-- When a test fails: fix the code, not the test (unless the contract itself changed).
+- **When a test fails: fix the code, not the test.** A test encodes a contract decision. Modifying a test to make it pass without changing the contract first means the spec and the code silently diverge — this is the failure mode vibespec exists to prevent.
 - No code without tests. Untested code = nonexistent code.
 
 ### Rules
 
 1. Read `.vibe/` before writing code.
-2. When modifying `modules/*.md`, always update contract tests in the same change.
-3. Every module interface change must update the contract test scenarios.
+2. Change propagation is top-down: SPEC → DESIGN → modules → code. Never reverse.
+3. When modifying `modules/*.md`, update contract tests in the same change.
 4. Test failures mean the code is wrong, not the test.
-5. Keep `.vibe/` files in sync — if you change behavior, update the spec.
-6. Change propagation is top-down: SPEC → DESIGN → modules → code.
+5. Keep `.vibe/` files in sync — if behavior changes, update the spec first.
 <!-- vibe-spec:end -->
