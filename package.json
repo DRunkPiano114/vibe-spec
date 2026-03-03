@@ -1,10 +1,10 @@
 {
-  "name": "vibe-spec",
+  "name": "@soberpiano/vibespec",
   "version": "0.1.0",
   "description": "Spec-first development protocol for AI coding agents",
   "type": "module",
   "bin": {
-    "vibe-spec": "./dist/cli.js"
+    "vibespec": "./dist/cli.js"
   },
   "files": [
     "dist",
@@ -22,6 +22,9 @@
     "vibe"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "commander": "^13.1.0"
   },
