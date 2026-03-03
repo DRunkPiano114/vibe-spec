@@ -2,7 +2,7 @@
 
 Spec-first development protocol for AI coding agents.
 
-We believe that spec-driven development and rigorous contract testing makes speed sustainable.
+We believe that spec-driven development and rigorous contract testing make vibe coding sustainable.
 
 
 
@@ -30,11 +30,12 @@ This creates:
 
 ```
 .vibe/
-├── SPEC.md       # Product requirements (why + what)
-├── STACK.md      # Tech stack constraints (with what)
-├── DESIGN.md     # System architecture (how, at a high level)
-└── modules/      # Module interface contracts
-AGENTS.md         # ← vibespec protocol appended (existing content preserved)
+├── SPEC.md           # Product requirements (why + what)
+├── STACK.md          # Tech stack constraints (with what)
+├── DESIGN.md         # System architecture (how, at a high level)
+└── modules/
+    └── example.md    # Starter module contract (rename or replace)
+AGENTS.md             # ← vibespec protocol appended (existing content preserved)
 ```
 
 **Step 2 — tell your agent:**
