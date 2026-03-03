@@ -1,0 +1,32 @@
+{
+  "name": "vibe-spec",
+  "version": "0.1.0",
+  "description": "Spec-first development protocol for AI coding agents",
+  "type": "module",
+  "bin": {
+    "vibe-spec": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "keywords": [
+    "ai",
+    "coding-agent",
+    "spec",
+    "agents-md",
+    "vibe"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.0"
+  }
+}
